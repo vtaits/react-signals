@@ -1,0 +1,68 @@
+{
+  "name": "react-signals",
+  "version": "1.0.0",
+  "description": "React integration for TC39 signals",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "typings": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "test:ts": "tsc",
+    "lint": "biome check src",
+    "lint:fix": "biome check src --write --unsafe",
+    "test": "npm run lint && npm run test:ts",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vtaits/react-signals.git"
+  },
+  "keywords": [
+    "react",
+    "signals",
+    "signal",
+    "proposal",
+    "signal-polyfill"
+  ],
+  "author": "Vadim Taits <taizvadim@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vtaits/react-signals/issues"
+  },
+  "homepage": "https://github.com/vtaits/react-signals#readme",
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "signal-polyfill": "^0.2.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.3",
+    "@chromatic-com/storybook": "^1.9.0",
+    "@storybook/addon-essentials": "^8.3.5",
+    "@storybook/addon-interactions": "^8.3.5",
+    "@storybook/addon-links": "^8.3.5",
+    "@storybook/addon-onboarding": "^8.3.5",
+    "@storybook/blocks": "^8.3.5",
+    "@storybook/react": "^8.3.5",
+    "@storybook/react-vite": "^8.3.5",
+    "@storybook/test": "^8.3.5",
+    "@types/react": "^18.3.11",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "signal-polyfill": "^0.2.1",
+    "storybook": "^8.3.5",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.3"
+  }
+}

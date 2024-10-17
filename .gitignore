@@ -1,0 +1,10 @@
+.idea
+coverage
+dist
+lib
+es
+ts
+node_modules
+*.log
+
+*storybook.log
