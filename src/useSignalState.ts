@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { Signal } from "signal-polyfill";
 
+/**
+ * Hook that creates a local state signal for the component.
+ *
+ * @param initialState Initial value of the signal or initializer function of the initial value
+ * @param options Signal's options
+ */
 export function useSignalState<S>(
 	initialState: S | (() => S),
 	options?: Signal.Options<S> | undefined,

@@ -34,7 +34,7 @@ export function Signalify({ text, logRender }: ISignalifyProps) {
 	return (
 		<>
 			<p>
-				This example demonstrates how to convert not-signal values (e.g.
+				This example demonstrates how to convert non-signal values (e.g.
 				component props) to signals.
 			</p>
 

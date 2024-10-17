@@ -2,6 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { effect } from "./effect";
 import type { AnySignal } from "./types";
 
+/**
+ * Hook that monitors a list of signals and triggers re-render of the component if one of them is changed.
+ */
 export function useRerender(
 	// biome-ignore lint/suspicious/noExplicitAny: supports any type of signal
 	signals: readonly AnySignal<any>[],
