@@ -11,7 +11,7 @@ function Text({ counter, logRender }: ITextProps) {
 
 	useRerender([counter]);
 
-	return <span>{counter.get()}</span>;
+	return <span data-testid="counter">{counter.get()}</span>;
 }
 
 type IButtonProps = Readonly<{

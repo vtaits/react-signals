@@ -12,7 +12,7 @@ function InnerText({ textSignal, logRender }: ITextProps) {
 
 	useRerender([textSignal]);
 
-	return <span>{textSignal.get()}</span>;
+	return <span data-testid="text">{textSignal.get()}</span>;
 }
 
 const OuterText = memo(({ textSignal, logRender }: ITextProps) => {

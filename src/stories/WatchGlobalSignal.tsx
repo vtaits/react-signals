@@ -18,7 +18,7 @@ export function WatchGlobalSignal() {
 
 			<hr />
 
-			<div>
+			<div data-testid="time">
 				{new Intl.DateTimeFormat("en-US", {
 					dateStyle: undefined,
 					timeStyle: "medium",

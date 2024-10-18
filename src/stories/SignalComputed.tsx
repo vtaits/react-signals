@@ -16,7 +16,12 @@ function Text({ computed, logRender }: ITextProps) {
 
 	useRerender([computed]);
 
-	return <span>Math.floor(counter / 3) = {computed.get()}</span>;
+	return (
+		<span>
+			Math.floor(counter / 3) ={" "}
+			<span data-testid="counter">{computed.get()}</span>
+		</span>
+	);
 }
 
 type IButtonProps = Readonly<{
