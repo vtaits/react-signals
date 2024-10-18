@@ -24,7 +24,8 @@
     "test:storybook:dev": "test-storybook --watch",
     "test": "npm run lint && npm run test:ts && npm run test:storybook",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
