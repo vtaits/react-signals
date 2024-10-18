@@ -1,5 +1,5 @@
 {
-  "name": "react-signals",
+  "name": "@vtaits/react-signals",
   "version": "1.0.0",
   "description": "React integration for TC39 signals",
   "files": [
