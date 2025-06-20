@@ -1,7 +1,7 @@
-import type { Channel } from "@storybook/channels";
-import { UPDATE_STORY_ARGS } from "@storybook/core-events";
-import type { Meta, StoryObj } from "@storybook/react";
-import { expect, fn, waitFor, within } from "@storybook/test";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { Channel } from "storybook/internal/channels";
+import { UPDATE_STORY_ARGS } from "storybook/internal/core-events";
+import { expect, fn, waitFor, within } from "storybook/test";
 import { Signalify } from "./Signalify";
 
 const meta = {
