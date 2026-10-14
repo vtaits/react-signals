@@ -24,8 +24,8 @@
     "test:ts": "tsc",
     "lint": "biome check src",
     "lint:fix": "biome check src --write --unsafe",
-    "test:storybook": "test-storybook",
-    "test:storybook:dev": "test-storybook --watch",
+    "test:storybook": "vitest --project=storybook run",
+    "test:storybook:dev": "vitest --project=storybook --watch",
     "test": "npm run lint && npm run test:ts && npm run test:storybook",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
@@ -54,14 +54,20 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.5.15",
+    "@storybook/addon-vitest": "^10.6.2",
     "@storybook/react-vite": "^10.6.2",
-    "@storybook/test-runner": "^0.26.0",
     "@types/react": "^19.3.0",
+    "@vitest/browser-playwright": "5.0.4",
+    "@vitest/coverage-v8": "5.0.4",
+    "playwright": "latest",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "signal-polyfill": "^0.2.2",
     "storybook": "^10.6.2",
     "typescript": "^7.0.2",
     "vitest": "^5.0.4"
+  },
+  "dependencies": {
+    "@types/node": "^26.6.5"
   }
 }

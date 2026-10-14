@@ -4,8 +4,9 @@
 
 /** @type {StorybookConfig} */
 const config = {
-  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
-  framework: "@storybook/react-vite",
+ stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+ framework: "@storybook/react-vite",
+ addons: ["@storybook/addon-vitest"]
 };
 
 export default config;
