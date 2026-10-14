@@ -1,26 +1,30 @@
 {
+  "type": "module",
   "name": "@vtaits/react-signals",
   "version": "1.0.2",
   "description": "React integration for TC39 signals",
   "files": [
-    "dist"
+    "dist",
+    "src",
+    "!src/stories",
+    "!src/**/*.test.js"
   ],
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "typings": "dist/index.d.ts",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "typings": "dist/ts/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "types": "./dist/ts/index.d.ts",
+      "import": "./src/index.js",
+      "require": "./src/index.js"
     }
   },
   "scripts": {
-    "build": "tsup",
+    "build": "tsc -p tsconfig.build.json",
     "test:ts": "tsc",
     "lint": "biome check src",
     "lint:fix": "biome check src --write --unsafe",
-    "test:storybook": "test-storybooks",
+    "test:storybook": "test-storybook",
     "test:storybook:dev": "test-storybook --watch",
     "test": "npm run lint && npm run test:ts && npm run test:storybook",
     "storybook": "storybook dev -p 6006",
@@ -49,16 +53,15 @@
     "signal-polyfill": "^0.2.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.0.0",
-    "@storybook/react-vite": "^9.0.12",
-    "@storybook/test-runner": "^0.23.0",
-    "@types/react": "^19.1.8",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "@biomejs/biome": "^2.5.15",
+    "@storybook/react-vite": "^10.6.2",
+    "@storybook/test-runner": "^0.26.0",
+    "@types/react": "^19.3.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
     "signal-polyfill": "^0.2.2",
-    "storybook": "^9.0.12",
-    "tsup": "^8.5.0",
-    "typescript": "^5.8.3",
-    "vitest": "^3.2.4"
+    "storybook": "^10.6.2",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.4"
   }
 }

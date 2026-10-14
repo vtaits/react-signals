@@ -1,17 +1,22 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, fn, userEvent, waitFor, within } from "storybook/test";
-import { Effect } from "./Effect";
+import { Effect } from "./Effect.jsx";
 
+/**
+ * @import { Meta, StoryObj } from "@storybook/react-vite"
+ */
+
+/** @type {Meta} */
 const meta = {
 	title: "Examples",
-} satisfies Meta;
+};
 
 export default meta;
 
-export const EffectStory: StoryObj<{
+/** @type {StoryObj<{
 	logCounter: (action: string, value: number) => void;
 	logRender: (componentName: string) => void;
-}> = {
+}>} */
+export const EffectStory = {
 	name: "Effect",
 	args: {
 		logCounter: fn(),

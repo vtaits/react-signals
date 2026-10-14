@@ -1,6 +1,9 @@
-import type { Preview } from "@storybook/react";
+/**
+ * @import { Preview } from "@storybook/react-vite"
+ */
 
-const preview: Preview = {
+/** @type {Preview} */
+const preview = {
   parameters: {
     controls: {
       matchers: {

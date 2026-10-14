@@ -1,11 +1,15 @@
-import { useSignalEffect, useSignalState } from "../index";
+import { useSignalEffect, useSignalState } from "../index.js";
 
-type IEffectProps = Readonly<{
-	logCounter: (action: string, value: number) => void;
-	logRender: (componentName: string) => void;
-}>;
+/**
+ * @typedef {Object} IEffectProps
+ * @property {(action: string, value: number) => void} logCounter
+ * @property {(componentName: string) => void} logRender
+ */
 
-export function Effect({ logCounter, logRender }: IEffectProps) {
+/**
+ * @param {IEffectProps} props
+ */
+export function Effect({ logCounter, logRender }) {
 	logRender("root");
 
 	const counter = useSignalState(0);

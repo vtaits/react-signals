@@ -19,8 +19,12 @@ function processPending() {
 	w.watch();
 }
 
-export function effect(callback: () => void | VoidFunction) {
-	let cleanup: void | VoidFunction;
+/**
+ * @param {() => void | VoidFunction} callback
+ */
+export function effect(callback) {
+	/** @type {void | VoidFunction} */
+	let cleanup;
 
 	const computed = new Signal.Computed(() => {
 		typeof cleanup === "function" && cleanup();

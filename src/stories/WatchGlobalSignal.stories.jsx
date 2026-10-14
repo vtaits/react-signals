@@ -1,14 +1,19 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, within } from "storybook/test";
-import { WatchGlobalSignal } from "./WatchGlobalSignal";
+import { WatchGlobalSignal } from "./WatchGlobalSignal.jsx";
 
+/**
+ * @import { Meta, StoryObj } from "@storybook/react-vite"
+ */
+
+/** @type {Meta} */
 const meta = {
 	title: "Examples",
-} satisfies Meta;
+};
 
 export default meta;
 
-export const WatchGlobalSignalStory: StoryObj = {
+/** @type {StoryObj} */
+export const WatchGlobalSignalStory = {
 	name: "Watch global signal",
 	render: () => <WatchGlobalSignal />,
 	play: async ({ canvasElement }) => {
@@ -22,11 +27,13 @@ export const WatchGlobalSignalStory: StoryObj = {
 			}).format(new Date()),
 		);
 
-		await new Promise<void>((resolve) => {
-			setTimeout(() => {
-				resolve();
-			}, 2500);
-		});
+		await /** @type {Promise<void>} */ (
+			new Promise((resolve) => {
+				setTimeout(() => {
+					resolve();
+				}, 2500);
+			})
+		);
 
 		await expect(canvas.getByTestId("time")).toHaveTextContent(
 			new Intl.DateTimeFormat("en-US", {

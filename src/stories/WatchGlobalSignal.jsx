@@ -1,5 +1,5 @@
 import { Signal } from "signal-polyfill";
-import { useRerender } from "../index";
+import { useRerender } from "../index.js";
 
 const clock = new Signal.State(new Date());
 

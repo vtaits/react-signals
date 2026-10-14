@@ -1,12 +1,19 @@
-import type { Signal } from "signal-polyfill";
-import { useRerender, useSignalState } from "../index";
+import { useRerender, useSignalState } from "../index.js";
 
-type ITextProps = Readonly<{
-	counter: Signal.State<number>;
-	logRender: (componentName: string) => void;
-}>;
+/**
+ * @import { Signal } from "signal-polyfill"
+ */
 
-function Text({ counter, logRender }: ITextProps) {
+/**
+ * @typedef {Object} ITextProps
+ * @property {Signal.State<number>} counter
+ * @property {(componentName: string) => void} logRender
+ */
+
+/**
+ * @param {ITextProps} props
+ */
+function Text({ counter, logRender }) {
 	logRender("Text");
 
 	useRerender([counter]);
@@ -14,12 +21,16 @@ function Text({ counter, logRender }: ITextProps) {
 	return <span data-testid="counter">{counter.get()}</span>;
 }
 
-type IButtonProps = Readonly<{
-	counter: Signal.State<number>;
-	logRender: (componentName: string) => void;
-}>;
+/**
+ * @typedef {Object} IButtonProps
+ * @property {Signal.State<number>} counter
+ * @property {(componentName: string) => void} logRender
+ */
 
-function Button({ counter, logRender }: IButtonProps) {
+/**
+ * @param {IButtonProps} props
+ */
+function Button({ counter, logRender }) {
 	logRender("Button");
 
 	return (
@@ -34,11 +45,15 @@ function Button({ counter, logRender }: IButtonProps) {
 	);
 }
 
-type ISignalStateProps = Readonly<{
-	logRender: (componentName: string) => void;
-}>;
+/**
+ * @typedef {Object} ISignalStateProps
+ * @property {(componentName: string) => void} logRender
+ */
 
-export function SignalState({ logRender }: ISignalStateProps) {
+/**
+ * @param {ISignalStateProps} props
+ */
+export function SignalState({ logRender }) {
 	logRender("root");
 
 	const counter = useSignalState(0);

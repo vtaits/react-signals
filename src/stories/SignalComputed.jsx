@@ -1,17 +1,20 @@
-import type { Signal } from "signal-polyfill";
-import {
-	type AnySignal,
-	useRerender,
-	useSignalComputed,
-	useSignalState,
-} from "../index";
+import { useRerender, useSignalComputed, useSignalState } from "../index.js";
 
-type ITextProps = Readonly<{
-	computed: AnySignal<number>;
-	logRender: (componentName: string) => void;
-}>;
+/**
+ * @import { Signal } from "signal-polyfill"
+ * @import { AnySignal } from "../index.js"
+ */
 
-function Text({ computed, logRender }: ITextProps) {
+/**
+ * @typedef {Object} ITextProps
+ * @property {AnySignal<number>} computed
+ * @property {(componentName: string) => void} logRender
+ */
+
+/**
+ * @param {ITextProps} props
+ */
+function Text({ computed, logRender }) {
 	logRender("Text");
 
 	useRerender([computed]);
@@ -24,12 +27,16 @@ function Text({ computed, logRender }: ITextProps) {
 	);
 }
 
-type IButtonProps = Readonly<{
-	counter: Signal.State<number>;
-	logRender: (componentName: string) => void;
-}>;
+/**
+ * @typedef {Object} IButtonProps
+ * @property {Signal.State<number>} counter
+ * @property {(componentName: string) => void} logRender
+ */
 
-function Button({ counter, logRender }: IButtonProps) {
+/**
+ * @param {IButtonProps} props
+ */
+function Button({ counter, logRender }) {
 	logRender("Button");
 
 	return (
@@ -44,11 +51,15 @@ function Button({ counter, logRender }: IButtonProps) {
 	);
 }
 
-type ISignalComputedProps = Readonly<{
-	logRender: (componentName: string) => void;
-}>;
+/**
+ * @typedef {Object} ISignalComputedProps
+ * @property {(componentName: string) => void} logRender
+ */
 
-export function SignalComputed({ logRender }: ISignalComputedProps) {
+/**
+ * @param {ISignalComputedProps} props
+ */
+export function SignalComputed({ logRender }) {
 	logRender("root");
 
 	const counter = useSignalState(0);

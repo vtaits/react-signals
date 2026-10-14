@@ -1,16 +1,21 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, fn, userEvent, within } from "storybook/test";
-import { SignalComputed } from "./SignalComputed";
+import { SignalComputed } from "./SignalComputed.jsx";
 
+/**
+ * @import { Meta, StoryObj } from "@storybook/react-vite"
+ */
+
+/** @type {Meta} */
 const meta = {
 	title: "Examples",
-} satisfies Meta;
+};
 
 export default meta;
 
-export const SignalComputedStory: StoryObj<{
+/** @type {StoryObj<{
 	logRender: (componentName: string) => void;
-}> = {
+}>} */
+export const SignalComputedStory = {
 	name: "Computed signal",
 	args: {
 		logRender: fn(),

@@ -1,19 +1,24 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
-import type { Channel } from "storybook/internal/channels";
 import { UPDATE_STORY_ARGS } from "storybook/internal/core-events";
 import { expect, fn, waitFor, within } from "storybook/test";
-import { Signalify } from "./Signalify";
+import { Signalify } from "./Signalify.jsx";
 
+/**
+ * @import { Meta, StoryObj } from "@storybook/react-vite"
+ * @import { Channel } from "storybook/internal/channels"
+ */
+
+/** @type {Meta} */
 const meta = {
 	title: "Examples",
-} satisfies Meta;
+};
 
 export default meta;
 
-export const SignalifyStory: StoryObj<{
+/** @type {StoryObj<{
 	logRender: (componentName: string) => void;
 	text: string;
-}> = {
+}>} */
+export const SignalifyStory = {
 	name: "Signalify",
 	args: {
 		logRender: fn(),
@@ -35,11 +40,8 @@ export const SignalifyStory: StoryObj<{
 		expect(logRender).toHaveBeenNthCalledWith(3, "InnerText");
 
 		// https://github.com/storybookjs/storybook/issues/17089
-		const channel = (
-			window as unknown as {
-				__STORYBOOK_ADDONS_CHANNEL__: Channel;
-			}
-		).__STORYBOOK_ADDONS_CHANNEL__;
+		/** @type {Channel} */
+		const channel = /** @type {any} */ (window).__STORYBOOK_ADDONS_CHANNEL__;
 
 		channel.emit(UPDATE_STORY_ARGS, {
 			storyId,
